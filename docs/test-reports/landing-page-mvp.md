@@ -6,9 +6,9 @@
 - **Test cases:** `docs/test-cases/landing-page-mvp.md`
 - **Date:** 2026-11-21
 
-## Verdict: PASS
+## Verdict: FAIL
 
-Every acceptance criterion (AC-1 to AC-32) has at least one passing test case. The only failure is an exploratory, minor layout defect outside the acceptance criteria (#1), left open as backlog.
+Every acceptance criterion (AC-1 to AC-32) has at least one passing test case and no critical or major issue is open, but the full e2e suite does not pass: TC-39 fails on the minor navbar defect #1, so CI would be red. Fixing #1 is the only thing needed for PASS.
 
 ## Counts
 
