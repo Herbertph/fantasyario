@@ -35,6 +35,7 @@ export default function CostumeCard({ costume, selectedSize }: Props) {
         width={320}
         height={200}
         onError={() => setSrc(placeholderFor(costume.category))}
+        style={{ backgroundColor: TILE_COLORS[costume.category] }}
         className="aspect-[8/5] w-full rounded-2xl object-cover"
       />
       <div className="flex flex-1 flex-col items-center px-2 pt-4 pb-2 text-center">
@@ -61,7 +62,7 @@ export default function CostumeCard({ costume, selectedSize }: Props) {
           href={buildWhatsAppUrl(costume.name, selectedSize)}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-whatsapp px-4 py-2.5 font-bold text-ink transition-colors hover:bg-[#1fbe5b]"
+          className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-whatsapp px-3 py-2.5 text-[0.95rem] font-bold whitespace-nowrap text-ink transition-colors hover:bg-[#1fbe5b]"
         >
           <WhatsAppIcon />
           <span>

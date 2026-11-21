@@ -47,9 +47,10 @@ export default function Hero() {
         <path d="M0 0h620c-120 60-300 40-420 110C120 150 60 120 0 160z" fill="#d6c8f7" />
         <path d="M900 640c80-120 260-170 540-150v150z" fill="#fbe3a0" />
         <path d="M1140 330c120-30 220 0 300-30v190c-110-20-220 10-300-40z" fill="#f9a58c" />
+        <path d="M0 600c240-50 480 10 760-10s480-40 680-10v60H0z" fill="#fff" />
       </svg>
 
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 md:py-20">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pt-12 pb-16 sm:px-6 md:grid-cols-2 md:pt-20 md:pb-28">
         <div>
           <h1 className="text-4xl leading-[1.05] font-black tracking-tight text-balance sm:text-5xl lg:text-6xl">
             Aluguel de Fantasias Infantis e Mesversário
