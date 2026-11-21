@@ -20,10 +20,14 @@ const files = (await readdir(sourceDir)).filter((f) => /\.(png|jpe?g|webp)$/i.te
 for (const file of files) {
   const id = path.parse(file).name;
   const out = path.join(outDir, `${id}.webp`);
+  const src = path.join(sourceDir, file);
+  // Square side never exceeds the source, so small photos are cropped, not enlarged.
+  const { width, height } = await sharp(src).metadata();
+  const side = Math.min(MAX_SIZE, width, height);
   // Step quality down only if a photo would exceed the per-file budget.
   for (let quality = 80; quality >= 50; quality -= 10) {
-    const { size } = await sharp(path.join(sourceDir, file))
-      .resize(MAX_SIZE, MAX_SIZE, { fit: 'cover', withoutEnlargement: true })
+    const { size } = await sharp(src)
+      .resize(side, side, { fit: 'cover' })
       .webp({ quality })
       .toFile(out);
     if (size <= MAX_BYTES || quality === 50) {
