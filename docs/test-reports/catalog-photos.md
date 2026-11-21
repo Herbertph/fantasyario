@@ -1,14 +1,14 @@
 # Test report: catalog-photos
 
 - **Mode:** full test run
-- **Branch / commit:** `feature/catalog-photos` @ `c6df577`
+- **Branch / commit:** `feature/catalog-photos` @ `c6df577`, retest @ `b0e8c49`
 - **Spec:** `docs/specs/catalog-photos.md`
 - **Test cases:** `docs/test-cases/catalog-photos.md`
 - **Date:** 2026-11-21
 
-## Verdict: FAIL
+## Verdict: PASS
 
-Every acceptance criterion (AC-1 to AC-9) has a passing test case and no critical or major issue is open. But the unit suite does not pass: TC-9 fails on the minor defect #3 (20 photos are 1–3 px off square, against FR-1). Fixing #3 is the only thing needed for PASS.
+Retest at `b0e8c49`: #3 is verified fixed (all 54 photos are exact squares, at most 640 px; only the 20 affected files changed). Every acceptance criterion has a passing test case, the full suite passes and no critical or major issue is open. The first run at `c6df577` was FAIL because of TC-9.
 
 ## Counts
 
@@ -16,11 +16,11 @@ Every acceptance criterion (AC-1 to AC-9) has a passing test case and no critica
 |---|---|
 | Typecheck (`tsc -b`) | pass |
 | Build (`npm run build`) | pass |
-| Unit (`npm test`) | 30 passed, 1 failed (TC-9, #3) |
+| Unit (`npm test`) | 31 passed; first run: 30 passed, 1 failed (TC-9, #3) |
 | E2E (`npx playwright test`, desktop + mobile, all suites) | 150 passed, 14 skipped (project-specific tests) |
 | `npm audit` | 0 vulnerabilities |
 
-Test cases: 13 designed, 12 pass, 1 fail. TC-9 checks files on disk and fails every time, so it is not flaky.
+Test cases: 13 designed, 13 pass after the retest. TC-9 checks files on disk and fails every time, so it is not flaky.
 
 ## Traceability
 
@@ -35,12 +35,12 @@ Test cases: 13 designed, 12 pass, 1 fail. TC-9 checks files on disk and fails ev
 | AC-7 | TC-7, TC-8 | Pass |
 | AC-8 | TC-10 | Pass |
 | AC-9 | TC-11 + all `landing-page-mvp` e2e tests | Pass |
-| FR-1 (exploratory) | TC-9 | Fail (#3) |
+| FR-1 (exploratory) | TC-9 | Pass (after the #3 fix) |
 | FR-3, FR-6 (exploratory) | TC-12, TC-13 | Pass |
 
 ## Issues opened
 
-- #3 (minor): 20 costume photos are not square (1-3 px off) after optimization
+- #3 (minor): 20 costume photos are not square (1-3 px off) after optimization. Verified fixed in `b0e8c49` (left open; the PR closes it).
 
 ## Flaky tests
 

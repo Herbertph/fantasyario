@@ -1,6 +1,6 @@
 # Test cases: catalog-photos
 
-Spec: `docs/specs/catalog-photos.md`. Branch `feature/catalog-photos`, commit `c6df577`.
+Spec: `docs/specs/catalog-photos.md`. Branch `feature/catalog-photos`, commit `c6df577`; retested at `b0e8c49`.
 
 E2E cases live in `e2e/qa-catalog-photos.spec.ts` and run in both Playwright projects (desktop 1280x800, mobile 360x740) unless the test skips one project. Unit cases live in `src/data/photos.acceptance.test.ts`. Each automated test name starts with its TC ID. AC-9's regression part is covered by re-running the whole `landing-page-mvp` suite (`e2e/qa-acceptance.spec.ts`, `e2e/landing.spec.ts`).
 
@@ -137,7 +137,7 @@ E2E cases live in `e2e/qa-catalog-photos.spec.ts` and run in both Playwright pro
   1. Read format, width and height with `sharp`.
 - **Expected result:** format `webp`, width equal to height, at most 640 px.
 - **Automated by:** `src/data/photos.acceptance.test.ts` › `TC-9 (FR-1): every photo is a real WebP, square, at most 640 px`
-- **Status:** Fail (#3)
+- **Status:** Pass (#3 verified fixed in b0e8c49)
 
 ### TC-10: Built photo folder is at most 4 MB
 - **Acceptance criterion:** AC-8
