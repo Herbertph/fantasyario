@@ -16,7 +16,17 @@ export default function Highlights({ onShortcut }: Props) {
         <h2 className="pr-8 text-2xl font-black sm:text-3xl">Especial 6 Meses — Introdução Alimentar</h2>
         <ul className="mt-6 space-y-4">
           {SIX_MONTHS.map((c) => (
-            <li key={c.id} className="rounded-2xl bg-white p-5">
+            <li key={c.id} className="flex flex-col gap-4 rounded-2xl bg-white p-5 sm:flex-row sm:items-center">
+              <img
+                src={`/images/costumes/${c.id}.webp`}
+                alt={c.name}
+                loading="lazy"
+                decoding="async"
+                width={128}
+                height={128}
+                className="aspect-square w-32 shrink-0 rounded-2xl object-cover"
+              />
+              <div>
               <h3 className="text-lg font-extrabold">{c.name}</h3>
               <p className="mt-1 text-ink/75">{c.notes}</p>
               <a
@@ -30,6 +40,7 @@ export default function Highlights({ onShortcut }: Props) {
                   Alugar <span className="sr-only">{c.name} </span>pelo WhatsApp
                 </span>
               </a>
+              </div>
             </li>
           ))}
         </ul>
