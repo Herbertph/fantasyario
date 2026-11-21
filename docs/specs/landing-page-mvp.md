@@ -170,8 +170,7 @@ export interface CostumeItem {
 
 export const WHATSAPP_NUMBER = '5585992006868';
 export const WHATSAPP_DISPLAY = '(85) 99200-6868';
-// TODO: confirm with Herbert (see Assumptions A-2)
-export const INSTAGRAM_URL = 'https://www.instagram.com/fantasyario/';
+export const INSTAGRAM_URL = 'https://www.instagram.com/fantasyarioo/';
 
 export const SIZE_GUIDE: SizeGuide[] = [
   { size: 'PP', ageRange: 'RN' },
@@ -266,7 +265,7 @@ The catalog has 54 costumes. A unit test should guard this data: 54 items, uniqu
 ## Assumptions (Herbert, please confirm in review)
 
 - **A-1 Photos.** There are no real costume or hero photos yet. The MVP uses tasteful placeholders: per-category pastel illustrated tiles (SVG/CSS with the costume name or a simple icon) for cards, and an illustrated composition (shapes + doodles) for the hero. Images are loaded from `public/images/costumes/<id>.webp` when the file exists, so Herbert can drop real photos in later without code changes; missing files fall back to the placeholder. No stock photos of real children and no copyrighted character art are added.
-- **A-2 Instagram.** The Instagram profile URL was not given; `INSTAGRAM_URL` is set to `https://www.instagram.com/fantasyario/` as a placeholder in one constant.
+- **A-2 Instagram.** Confirmed by Herbert: the profile is `https://www.instagram.com/fantasyarioo/` (two "o"s; the tracking query string from the shared link is dropped).
 - **A-3 Navigation.** The navbar uses the brief's links (Catálogo, Tabela de Tamanhos, Como Funciona), not "Mesversário" from the reference image.
 - **A-4 No prices** are shown (no data).
 - **A-5 Subtitle.** The hero subtitle is the brief's copy, not the one in the reference image ("Transforme cada celebração…").
