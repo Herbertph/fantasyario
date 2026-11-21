@@ -22,8 +22,7 @@ export interface CostumeItem {
 
 export const WHATSAPP_NUMBER = '5585992006868';
 export const WHATSAPP_DISPLAY = '(85) 99200-6868';
-// TODO: confirm with Herbert (see Assumptions A-2)
-export const INSTAGRAM_URL = 'https://www.instagram.com/fantasyario/';
+export const INSTAGRAM_URL = 'https://www.instagram.com/fantasyarioo/';
 
 export const SIZE_GUIDE: SizeGuide[] = [
   { size: 'PP', ageRange: 'RN' },

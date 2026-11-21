@@ -352,7 +352,7 @@ test.describe('highlights and how it works', () => {
     await expect(footer.getByText('Organize o mesversário do seu filho agora e fique tranquila o resto do ano!')).toBeVisible();
     await expect(footer.getByRole('link', { name: '(85) 99200-6868' })).toBeVisible();
     const ig = footer.getByRole('link', { name: 'Instagram da Fantasyário' });
-    await expect(ig).toHaveAttribute('href', 'https://www.instagram.com/fantasyario/');
+    await expect(ig).toHaveAttribute('href', 'https://www.instagram.com/fantasyarioo/');
     await expect(ig).toHaveAttribute('target', '_blank');
   });
 });
