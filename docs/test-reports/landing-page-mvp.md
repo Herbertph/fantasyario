@@ -1,7 +1,7 @@
 # Test report: landing-page-mvp
 
 - **Mode:** full test run
-- **Branch / commit:** `feature/landing-page-mvp` @ `114a2cd`, retest @ `3bd819d`
+- **Branch / commit:** `feature/landing-page-mvp` @ `114a2cd`, retest @ `3bd819d`, recheck @ `8609cb6`
 - **Spec:** `docs/specs/landing-page-mvp.md`
 - **Test cases:** `docs/test-cases/landing-page-mvp.md`
 - **Date:** 2026-11-21
@@ -9,6 +9,8 @@
 ## Verdict: PASS
 
 Retest at `3bd819d`: #1 is verified fixed (TC-39 passes, navbar checked visually at 768, 800, 950 and 1024 px). Every acceptance criterion has a passing test case, the full suite passes and no critical or major issue is open. The first run at `114a2cd` was FAIL because of TC-39.
+
+Recheck at `8609cb6` (Instagram URL changed to the confirmed `https://www.instagram.com/fantasyarioo/`, spec A-2 updated in `c063d8c`): TC-34 (AC-30) passes against the new URL; unit 25/25 and e2e 122 passed, 8 skipped. The only edit to QA tests was the expected href in TC-34, which matches the spec.
 
 ## Counts
 
