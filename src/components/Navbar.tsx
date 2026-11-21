@@ -27,7 +27,7 @@ export default function Navbar() {
           <Logo />
         </a>
 
-        <ul className="hidden items-center gap-8 text-lg font-semibold md:flex">
+        <ul className="hidden items-center gap-5 text-base font-semibold whitespace-nowrap md:flex lg:gap-8 lg:text-lg">
           {LINKS.map((l) => (
             <li key={l.href}>
               <a href={l.href} className="rounded hover:underline hover:underline-offset-8">
@@ -45,8 +45,8 @@ export default function Navbar() {
             aria-label="Reservar pelo WhatsApp"
             className="flex items-center gap-2 rounded-full border-2 border-ink py-1 pr-1 pl-3 text-sm font-bold whitespace-nowrap transition-colors hover:bg-ink/5 sm:pl-5 sm:text-base"
           >
-            <span className="sm:hidden">Reservar</span>
-            <span className="hidden sm:inline">Reservar pelo WhatsApp</span>
+            <span className="lg:hidden">Reservar</span>
+            <span className="hidden lg:inline">Reservar pelo WhatsApp</span>
             <span className="grid h-8 w-8 place-items-center rounded-full bg-whatsapp text-white sm:h-9 sm:w-9">
               <WhatsAppIcon />
             </span>
