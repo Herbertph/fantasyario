@@ -32,11 +32,12 @@ export default function CostumeCard({ costume, selectedSize }: Props) {
         src={src}
         alt={costume.name}
         loading="lazy"
+        decoding="async"
         width={320}
-        height={200}
+        height={320}
         onError={() => setSrc(placeholderFor(costume.category))}
         style={{ backgroundColor: TILE_COLORS[costume.category] }}
-        className="aspect-[8/5] w-full rounded-2xl object-cover"
+        className="aspect-square w-full rounded-2xl object-cover object-center"
       />
       <div className="flex flex-1 flex-col items-center px-2 pt-4 pb-2 text-center">
         <h3 className="text-xl leading-tight font-extrabold">{costume.name}</h3>

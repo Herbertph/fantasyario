@@ -272,9 +272,13 @@ test.describe('cards', () => {
     expect(await weight('M2')).toBeGreaterThan(await weight('M1'));
   });
 
-  test('TC-43 (FR-18): card image falls back to a visible placeholder when no photo exists', async ({ page }) => {
-    const img = cards(page).first().locator('img');
+  test('TC-43 (FR-18): card image falls back to a visible placeholder when the photo fails to load', async ({ page }) => {
+    await page.route('**/images/costumes/batman.webp', (route) => route.fulfill({ status: 404 }));
+    await page.reload();
+    const card = cards(page).filter({ has: page.getByRole('heading', { name: 'Batman', exact: true }) });
+    const img = card.getByRole('img', { name: 'Batman' });
     await img.scrollIntoViewIfNeeded();
+    await expect(img).toHaveAttribute('src', /^data:image\/svg\+xml/);
     await expect.poll(() => img.evaluate((el: HTMLImageElement) => el.complete && el.naturalWidth > 0)).toBe(true);
   });
 });
