@@ -1,14 +1,14 @@
 # Test report: landing-page-mvp
 
 - **Mode:** full test run
-- **Branch / commit:** `feature/landing-page-mvp` @ `114a2cd`
+- **Branch / commit:** `feature/landing-page-mvp` @ `114a2cd`, retest @ `3bd819d`
 - **Spec:** `docs/specs/landing-page-mvp.md`
 - **Test cases:** `docs/test-cases/landing-page-mvp.md`
 - **Date:** 2026-11-21
 
-## Verdict: FAIL
+## Verdict: PASS
 
-Every acceptance criterion (AC-1 to AC-32) has at least one passing test case and no critical or major issue is open, but the full e2e suite does not pass: TC-39 fails on the minor navbar defect #1, so CI would be red. Fixing #1 is the only thing needed for PASS.
+Retest at `3bd819d`: #1 is verified fixed (TC-39 passes, navbar checked visually at 768, 800, 950 and 1024 px). Every acceptance criterion has a passing test case, the full suite passes and no critical or major issue is open. The first run at `114a2cd` was FAIL because of TC-39.
 
 ## Counts
 
@@ -17,10 +17,10 @@ Every acceptance criterion (AC-1 to AC-32) has at least one passing test case an
 | Typecheck (`tsc -b`) | pass |
 | Build (`npm run build`) | pass |
 | Unit (`npm test`) | 25 passed (19 existing + 6 QA) |
-| E2E (`npx playwright test`, desktop + mobile) | 121 passed, 1 failed (TC-39, #1), 8 skipped (project-specific tests) |
+| E2E (`npx playwright test`, desktop + mobile) | 122 passed, 8 skipped (project-specific tests); first run: 121 passed, 1 failed (TC-39, #1) |
 | `npm audit --omit=dev` | 0 vulnerabilities |
 
-Test cases: 47 designed, 46 pass, 1 fail. TC-39 failed 3 out of 3 runs, so it is a real defect, not a flaky test.
+Test cases: 47 designed, 47 pass after the retest. TC-39 failed 3 out of 3 runs, so it is a real defect, not a flaky test.
 
 ## Traceability
 
@@ -58,11 +58,11 @@ Test cases: 47 designed, 46 pass, 1 fail. TC-39 failed 3 out of 3 runs, so it is
 | AC-30 | TC-34 | Pass |
 | AC-31 | TC-35, TC-36, TC-42 | Pass |
 | AC-32 | TC-37 | Pass |
-| Exploratory (FR-4, FR-5, FR-7, FR-12, FR-15, FR-17, FR-18, FR-24/25) | TC-38, TC-39, TC-40, TC-41, TC-43, TC-44, TC-46, TC-47, TC-48 | Pass, except TC-39: Fail (#1) |
+| Exploratory (FR-4, FR-5, FR-7, FR-12, FR-15, FR-17, FR-18, FR-24/25) | TC-38, TC-39, TC-40, TC-41, TC-43, TC-44, TC-46, TC-47, TC-48 | Pass (TC-39 after the #1 fix) |
 
 ## Issues opened
 
-- #1 (minor): Navbar links wrap to two lines and overflow the header between 768 and ~950 px
+- #1 (minor): Navbar links wrap to two lines and overflow the header between 768 and ~950 px. Verified fixed in `3bd819d` (left open; the PR closes it).
 
 ## Flaky tests
 
@@ -76,7 +76,7 @@ None. All acceptance criteria were testable as written.
 
 - 1400 px: layout, palette, pastel waves with the white wave at the bottom of the hero, doodles, black pill CTA and outlined WhatsApp pill match the reference hierarchy. Hero art is the illustrated placeholder (assumption A-1).
 - 360 px: hero stacks copy above the image; navbar shows logo, "Reservar" pill and menu button with no horizontal scroll; cards are one column with the CTA on one line.
-- 800 px: cards in two columns and fine; navbar links wrap and overflow the bar (#1).
+- 800 px: cards in two columns. Navbar links wrapped at `114a2cd` (#1); one line with the short "Reservar" label after `3bd819d`.
 
 ## Code review (`git diff main...HEAD`)
 

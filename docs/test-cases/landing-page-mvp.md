@@ -1,6 +1,6 @@
 # Test cases: landing-page-mvp
 
-Spec: `docs/specs/landing-page-mvp.md`. Branch `feature/landing-page-mvp`, commit `114a2cd`.
+Spec: `docs/specs/landing-page-mvp.md`. Branch `feature/landing-page-mvp`, commit `114a2cd`; retested at `3bd819d`.
 
 E2E cases live in `e2e/qa-acceptance.spec.ts` and run in both Playwright projects (desktop 1280x800, mobile 360x740) unless the test skips one project. Unit cases live in `src/lib/acceptance.test.ts`. Each automated test name starts with its TC ID. TC-45 is unused.
 
@@ -643,7 +643,7 @@ E2E cases live in `e2e/qa-acceptance.spec.ts` and run in both Playwright project
   2. Count the line boxes of each navbar link.
 - **Expected result:** every link renders on one line, inside the header bar (FR-7 layout, reference image).
 - **Automated by:** `e2e/qa-acceptance.spec.ts` › `TC-39 (FR-4/FR-7): desktop navbar links stay on one line from 768 px up`
-- **Status:** Fail (#1)
+- **Status:** Pass (#1 verified fixed in 3bd819d)
 
 ## Not covered
 
