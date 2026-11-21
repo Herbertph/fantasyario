@@ -6,15 +6,26 @@ Built with a multi-agent pipeline: requirements analyst → developer → tester
 
 ## Stack
 
-To be defined by the first feature (MVP). The developer fills this in after scaffolding.
+- Vite + React 18 + TypeScript, Tailwind CSS v4 (theme tokens in `src/index.css`), Nunito via `@fontsource/nunito`
+- Vitest for unit tests; Playwright (Chromium, `desktop` 1280x800 and `mobile` 360x740 projects) with `@axe-core/playwright` for end-to-end
+- GitHub Actions CI (`.github/workflows/ci.yml`): typecheck, unit tests, build, e2e
 
 ## Commands
 
-To be defined by the first feature. List install, dev server, build, unit test and end-to-end test commands here.
+- `npm install` / `npx playwright install chromium`
+- `npm run dev`: dev server
+- `npm run build`: typecheck + production build to `dist/`
+- `npm run typecheck`
+- `npm test`: unit tests (Vitest)
+- `npm run test:e2e`: builds and serves the app on port 5180, then runs Playwright (never use port 4545)
 
 ## Structure
 
-To be defined by the first feature.
+- `src/data/catalog.ts`: catalog data, size guide, WhatsApp/Instagram constants, `buildWhatsAppUrl`
+- `src/lib/`: pure logic (`filterCostumes`, category options, date shortcuts, result count) with `*.test.ts` next to it
+- `src/components/`: page sections; `src/App.tsx` owns the shared filter state
+- `public/images/costumes/<id>.webp`: optional real photos; cards fall back to a pastel placeholder when missing
+- `e2e/`: Playwright end-to-end tests
 
 - `docs/specs/`: feature specs written by the requirements analyst
 - `docs/test-cases/`: test cases (TC-n, with steps and expected results) written by the tester
